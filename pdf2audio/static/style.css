@@ -1,0 +1,17 @@
+.card-header h3 {
+  margin-bottom: 0;
+}
+
+.form-control-file {
+  height: auto;
+}
+
+.btn-primary {
+  margin-top: 10px;
+}
+
+@media (min-width: 576px) {
+  .col-md-8 {
+    max-width: 600px;
+  }
+}

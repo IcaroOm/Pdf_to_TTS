@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>PDF Details</h2>
+  <table>
+    <tr>
+      <td>Title:</td>
+      <td>{{ pdf.title }}</td>
+    </tr>
+    <tr>
+      <td>Author:</td>
+      <td>{{ pdf.author }}</td>
+    </tr>
+    <tr>
+      <td>Number of Pages:</td>
+      <td>{{ pdf.num_pages }}</td>
+    </tr>
+    <tr>
+      <td>Created:</td>
+      <td>{{ pdf.created_at }}</td>
+    </tr>
+    <tr>
+      <td>Audio File:</td>
+      <td><a href="{{ pdf.audio_file.url }}">{{ pdf.audio_file.name }}</a></td>
+    </tr>
+  </table>
+{% endblock %}

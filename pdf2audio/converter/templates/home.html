@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Convert PDF to Audio</h3>
+        </div>
+        <div class="card-body">
+          <form method="post" action="{% url 'converter:home' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="pdf">Select PDF file</label>
+              <input type="file" class="form-control-file" id="pdf" name="pdf">
+            </div>
+            <div class="form-group">
+              <label for="language">Select Language</label>
+              <select class="form-control" id="language" name="language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="speed">Select Speed</label>
+              <select class="form-control" id="speed" name="speed">
+                <option value="0.5">Slow</option>
+                <option value="1" selected>Normal</option>
+                <option value="1.5">Fast</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Convert to Audio</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
